@@ -58,7 +58,8 @@ public class Solution {
 
   useEffect(() => {
     isMountedRef.current = true;
-    const newSocket = io('http://localhost:5000');
+    const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000';
+    const newSocket = io(SOCKET_URL, { withCredentials: true });
     setSocket(newSocket);
 
     newSocket.emit('join_room', { roomId, username });

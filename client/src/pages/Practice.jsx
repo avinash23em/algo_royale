@@ -90,7 +90,8 @@ public class Solution {
         
         // Fetch last submission
         try {
-          const url = `http://localhost:5000/api/submissions/last/${problemId}`;
+          const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+          const url = `${API_URL}/api/submissions/last/${problemId}`;
           console.log('Fetching from:', url);
           
           const submissionResponse = await fetch(url, {

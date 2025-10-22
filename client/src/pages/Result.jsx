@@ -20,14 +20,15 @@ const Result = ({ user, onUserUpdate }) => {
           await onUserUpdate();
         }
         
+        const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
         let url;
         if (matchId) {
           // Fetch specific match by ID
-          url = `http://localhost:5000/api/match/result/${matchId}`;
+          url = `${API_URL}/api/match/result/${matchId}`;
           console.log('Fetching match by ID:', matchId);
         } else {
           // Fetch latest match for user
-          url = 'http://localhost:5000/api/match/latest';
+          url = `${API_URL}/api/match/latest`;
           console.log('Fetching latest match for user');
         }
         

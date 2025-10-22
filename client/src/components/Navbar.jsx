@@ -84,7 +84,7 @@ const Navbar = ({ user, isAuthenticated }) => {
               </>
             ) : (
               <a
-                href="http://localhost:5000/api/auth/google"
+                href={`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/google`}
                 className="btn-primary text-xs lg:text-sm px-3 lg:px-4 py-2"
               >
                 Sign in
@@ -166,7 +166,7 @@ const Navbar = ({ user, isAuthenticated }) => {
                 </>
               ) : (
                 <a
-                  href="http://localhost:5000/api/auth/google"
+                  href={`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/google`}
                   className="block px-4 py-2 bg-purple-600 text-white text-center rounded-lg hover:bg-purple-700"
                 >
                   Sign in with Google
