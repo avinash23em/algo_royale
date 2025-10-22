@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { authAPI } from '../utils/api';
+import api, { authAPI } from '../utils/api';
 
 const AuthContext = createContext();
 
@@ -35,12 +35,14 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await axios.get('/api/auth/me');
-        setUser(response.data.user);
+        const response = await authAPI.getCurrentUser();
+        setUser(response.user);
       } catch (error) {
         console.error('Failed to fetch user:', error);
         // Token might be invalid, clear it
-        logout();
+        localStorage.removeItem('algo_royale_token');
+        setToken(null);
+        setUser(null);
       } finally {
         setLoading(false);
       }
@@ -76,8 +78,8 @@ export const AuthProvider = ({ children }) => {
     if (!token) return;
     
     try {
-      const response = await axios.get('/api/auth/me');
-      setUser(response.data.user);
+      const response = await authAPI.getCurrentUser();
+      setUser(response.user);
     } catch (error) {
       console.error('Failed to refresh user:', error);
     }
@@ -85,8 +87,8 @@ export const AuthProvider = ({ children }) => {
 
   const updateUsername = async (newUsername) => {
     try {
-      const response = await axios.put('/api/auth/username', { username: newUsername });
-      setUser(response.data.user);
+      const response = await api.put('/auth/username', { username: newUsername });
+      setUser(response.user);
       return { success: true };
     } catch (error) {
       return { 
