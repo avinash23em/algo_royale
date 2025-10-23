@@ -35,14 +35,16 @@ exports.googleAuthSuccess = async (req, res) => {
 exports.getCurrentUser = async (req, res) => {
   try {
     const user = await User.findById(req.user.id)
-      .select('-__v')
-      .lean();
+      .select('-__v');
     
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    res.json({ user });
+    // Convert to object to include virtuals
+    const userObj = user.toObject();
+    
+    res.json({ user: userObj });
   } catch (error) {
     console.error('Get current user error:', error);
     res.status(500).json({ message: 'Server error' });
