@@ -781,6 +781,57 @@ const seedProblems = async (req, res) => {
           { input: "5\n1 2 3 4 5", output: "6" },
           { input: "2\n2 1", output: "3" }
         ]
+      },
+      {
+        title: "Count Vowels",
+        difficulty: "Easy",
+        statement: "Given a string, count the number of vowels (a, e, i, o, u) it contains. Treat uppercase and lowercase vowels the same.",
+        inputFormat: "A single line containing string s.",
+        outputFormat: "Print the number of vowels in s.",
+        constraints: "1 ≤ length(s) ≤ 1000; s contains only alphabetic characters and spaces.",
+        sampleInput: "hello",
+        sampleOutput: "2",
+        testCases: [
+          { input: "hello", output: "2" },
+          { input: "Programming", output: "3" },
+          { input: "aeiou", output: "5" },
+          { input: "AEIOU", output: "5" },
+          { input: "xyz", output: "0" }
+        ]
+      },
+      {
+        title: "Sum of Digits",
+        difficulty: "Easy",
+        statement: "Given a positive integer n, compute the sum of its digits.",
+        inputFormat: "A single line containing integer n.",
+        outputFormat: "Print the sum of digits of n.",
+        constraints: "1 ≤ n ≤ 10^9",
+        sampleInput: "123",
+        sampleOutput: "6",
+        testCases: [
+          { input: "123", output: "6" },
+          { input: "9875", output: "29" },
+          { input: "1", output: "1" },
+          { input: "999", output: "27" },
+          { input: "100000", output: "1" }
+        ]
+      },
+      {
+        title: "Check Prime",
+        difficulty: "Easy",
+        statement: "Given an integer n, determine whether it is a prime number. A prime number has exactly two distinct positive divisors: 1 and itself.",
+        inputFormat: "A single line containing integer n.",
+        outputFormat: "Print 'YES' if n is prime; otherwise print 'NO'.",
+        constraints: "1 ≤ n ≤ 10^6",
+        sampleInput: "7",
+        sampleOutput: "YES",
+        testCases: [
+          { input: "7", output: "YES" },
+          { input: "10", output: "NO" },
+          { input: "2", output: "YES" },
+          { input: "1", output: "NO" },
+          { input: "97", output: "YES" }
+        ]
       }
     ];
 

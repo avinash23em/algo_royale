@@ -63,6 +63,20 @@ public class Solution {
     fetchProblems();
   }, []);
 
+  // Initialize solved problems from user data
+  useEffect(() => {
+    if (user && user.solvedProblems) {
+      setSolvedProblems(new Set(user.solvedProblems));
+    }
+  }, [user]);
+
+  // Handle language change - load boilerplate for new language
+  const handleLanguageChange = (newLanguage) => {
+    setLanguage(newLanguage);
+    setCode(getBoilerplateCode(newLanguage));
+    setVerdict(null);
+  };
+
   const fetchProblems = async () => {
     try {
       const data = await problemsAPI.getAll();
@@ -355,16 +369,25 @@ public class Solution {
             <div className="card mb-4">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-white">Code Editor</h3>
-                <select
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
-                  className="input-field text-sm"
-                >
-                  <option value="cpp">C++</option>
-                  <option value="python">Python</option>
-                  <option value="javascript">JavaScript</option>
-                  <option value="java">Java</option>
-                </select>
+                <div className="flex items-center gap-2">
+                  <select
+                    value={language}
+                    onChange={(e) => handleLanguageChange(e.target.value)}
+                    className="input-field text-sm"
+                  >
+                    <option value="cpp">C++</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="java">Java</option>
+                  </select>
+                  <button
+                    onClick={() => setCode(getBoilerplateCode(language))}
+                    className="text-xs px-3 py-1 bg-slate-700 hover:bg-slate-600 text-gray-300 rounded"
+                    title="Reset to boilerplate code"
+                  >
+                    Reset
+                  </button>
+                </div>
               </div>
 
               <CodeEditor

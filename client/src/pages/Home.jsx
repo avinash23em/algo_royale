@@ -54,7 +54,7 @@ const Home = ({ user, isAuthenticated }) => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-3 sm:gap-6 mt-8 sm:mt-12 max-w-md mx-auto">
                 <div className="card text-center p-3 sm:p-6">
-                  <div className="text-2xl sm:text-3xl font-bold text-purple-400">14+</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-purple-400">50+</div>
                   <div className="text-gray-400 text-xs sm:text-sm">Problems</div>
                 </div>
                 <div className="card text-center p-3 sm:p-6">
