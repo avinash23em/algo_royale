@@ -15,8 +15,8 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     // Redirect to backend Google OAuth
-    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-    window.location.href = `${API_URL}/api/auth/google`;
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+    window.location.href = `${API_URL}/auth/google`;
   };
 
   const error = searchParams.get('error');
