@@ -1,12 +1,12 @@
 # Algo Royale
   
-[home](assets/home.png)
+![home](assets/home.png)
 
 A competitive coding platform where developers can practice algorithms and battle against each other in real-time.
 
 ## What is this?
 
-Algo Royale is a web app for coding enthusiasts who want to sharpen their problem-solving skills. You can solve coding problems at your own pace in Practice Mode, or compete head-to-head with other players in Battle Mode. Think LeetCode meets multiplayer gaming.
+Algo Royale is a web app for coding enthusiasts who want to sharpen their problem-solving skills. You can solve coding problems at your own pace in Practice Mode, or compete head-to-head with other players in Battle Mode. Think Coding meets multiplayer gaming.
 
 ## Tech Stack
 
@@ -29,7 +29,7 @@ Algo Royale is a web app for coding enthusiasts who want to sharpen their proble
 ## Features
 
 ### Practice Mode
-[practice](assets/practice.png)
+![practice](assets/practice.png)
 - 50+ coding problems across Easy, Medium, and Hard difficulties
 - Support for C++, Python, JavaScript, and Java
 - Real-time code execution with test cases
@@ -37,13 +37,13 @@ Algo Royale is a web app for coding enthusiasts who want to sharpen their proble
 - XP system and ranking (Bronze → Silver → Gold → Platinum)
 
 ### Battle Mode
-[battle](assets/battle.png)
+![battle](assets/battle.png)
 - Real-time 1v1 coding battles
 - Matchmaking system
 - Live opponent tracking
 - Win/loss statistics
-- Competitive leaderboard
-[leaderboard](assets/leaderboard.png)
+### Competitive leaderboard 
+![leaderboard](assets/leaderboard.png)
 
 ### Other Stuff
 - Google sign-in (no password needed)
@@ -156,14 +156,6 @@ algo_royale/
 4. **Compete**: Both players solve the same problem, first to pass all tests wins
 5. **Earn XP**: Gain experience points and climb the ranks
 
-## Deployment
-
-The app is deployed on:
-- **Frontend**: Vercel
-- **Backend**: Render
-- **Database**: MongoDB Atlas
-
-Check `vercel.json` and `render.yaml` for deployment configs.
 
 ## Known Issues
 
@@ -178,16 +170,9 @@ Check `vercel.json` and `render.yaml` for deployment configs.
 - Team battles
 - Code review feature
 - Discussion forums
-- More languages (Go, Rust, etc.)
+- Community Driven Platform
 
-## Contributing
 
-Feel free to open issues or submit PRs. This is a learning project, so any feedback is welcome!
 
-## License
+     
 
-MIT
-
----
-
-Built with ☕ and 💻 by developers, for developers.
